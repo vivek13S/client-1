@@ -1,0 +1,33 @@
+<div class="row" >
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" style="text-align: center; font-weight: bold;color:white;font-size: 19px;"> Price List In Different Websites</h4>
+        <p style="color: white;text-align: end;">
+          <!-- <span style="cursor: pointer;color: blue;padding-right: 1%;" (click)="update()">Refresh </span> -->
+          
+
+          <span style="padding-right: 1%;">Last Update:</span> 
+          <span>{{ date | date:'dd/MM/yyyy h:mm:ss a'}}</span></p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th *ngFor="let head of headers" style="border-bottom:0.5px solid gold">{{head['headerName']}}</th>
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data;let i=index">  
+                         
+                <td *ngFor="let list of headers" [ngClass]="{'is-red':item['maxStatus']==item[list['fieldName']],'is-green':item['minStatus']==item[list['fieldName']],'align-data':list['headerName']=='Name'}">
+                 
+                  {{item[list['fieldName']]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

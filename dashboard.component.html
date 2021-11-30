@@ -1,0 +1,4 @@
+<div *ngIf="result">
+    
+    <table-cmp [data]="result" [headers]="columnDefs" [date]="refreshDate" (updateTable)="updateTable()"></table-cmp>
+</div>
